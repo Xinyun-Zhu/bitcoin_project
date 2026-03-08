@@ -14,3 +14,18 @@ models:
       - dbt_utils.equal_rowcount:
           compare_model: ref('stg_btc_outputs_py')
 
+exposures:
+
+  - name: btc_whale_alert_exposure
+    label: BTC Whale alert
+    type: dashboard
+    maturity: high
+    url: https://lookerstudio.google.com/u/0/reporting/4fa4dc79-6659-4366-8013-de6f1b01a872/page/bEWrF
+    description: >
+      "BTC Whale alert transactions report"
+
+    depends_on:
+      - ref('whale_alert')
+
+    owner:
+      name: XinyunZhu
