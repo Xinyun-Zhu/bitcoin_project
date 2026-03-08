@@ -1,9 +1,16 @@
 version: 2
 
+
 models:
-  - name: stg_btc
+  - name: stg_btc 
     columns:
       - name: HASH_KEY
         tests:
           - unique
           - not_null
+
+  - name: stg_btc_outputs
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_btc_outputs_py')
+
