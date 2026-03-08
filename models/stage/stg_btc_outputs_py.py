@@ -20,4 +20,4 @@ def model(dbt, session):
 
     df_final.columns = [col.upper() for col in df_final.columns]
 
-    return df
+    return df_final
