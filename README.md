@@ -1,15 +1,13 @@
-Welcome to your new dbt project!
+Welcome to my bitcoin project!
 
-### Using the starter project
+### Check the below link for my project detail here:
 
-Try running the following commands:
-- dbt run
-- dbt test
+(https://fortune-allium-e4e.notion.site/DBT-Bitcoin-Project-96eceaa8fb98834084fc019896a5d9e4)
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+### Check out my dbt note here: 
+(https://fortune-allium-e4e.notion.site/DBT-leveling-Up-313ceaa8fb9881408cd1c7e933b67e5a)
+
+
+###Happy learning!
