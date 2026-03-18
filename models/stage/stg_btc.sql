@@ -5,6 +5,7 @@
 ) }}
 
 SELECT
+'{{ invocation_id }}' as invocation_id,
   *
 FROM {{ source('btc', 'btc') }}
 

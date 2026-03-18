@@ -1,9 +1,49 @@
 version: 2
 
+
 models:
-  - name: stg_btc
+  - name: stg_btc 
     columns:
       - name: HASH_KEY
         tests:
           - unique
           - not_null
+
+  - name: stg_btc_outputs
+    tests:
+      - dbt_utils.equal_rowcount:
+          compare_model: ref('stg_btc_outputs_py')
+          
+  - name: whale_alert
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: invocation_id
+        data_type: string
+      - name: output_address
+        data_type: string
+        data_tests:
+          - assert_valid_btc_address
+      - name: total_sent
+        data_type: float
+      - name: tx_count
+        data_type: int
+      - name: total_sent_usd
+        data_type: float   
+
+exposures:
+
+  - name: btc_whale_alert_exposure
+    label: BTC Whale alert
+    type: dashboard
+    maturity: high
+    url: https://lookerstudio.google.com/u/0/reporting/4fa4dc79-6659-4366-8013-de6f1b01a872/page/bEWrF
+    description: >
+      "BTC Whale alert transactions report"
+
+    depends_on:
+      - ref('whale_alert')
+
+    owner:
+      name: XinyunZhu
